@@ -1,0 +1,116 @@
+libros = [
+    {"título": "Cien años de soledad", "autor": "Gabriel García Márquez", "precio": 12000, "stock": 5},
+    {"título": "1984", "autor": "George Orwell", "precio": 8500, "stock": 3},
+    {"título": "El principito", "autor": "Antoine de Saint-Exupéry", "precio": 7000, "stock": 0},
+    {"título": "Rayuela", "autor": "Julio Cortázar", "precio": 9500, "stock": 7},
+    {"título": "Ficciones", "autor": "Jorge Luis Borges", "precio": 11000, "stock": 1}
+]
+
+def mostrar_libros_disponibles():
+    print("\nLibros disponibles con stock mayor a 0:")
+    disponibles = False
+    for libro in libros:
+        if libro["stock"] > 0:
+            print(f"- {libro['título']} de {libro['autor']} (${libro['precio']}) - Stock: {libro['stock']}")
+            disponibles = True
+    if not disponibles:
+        print("No hay libros disponibles en stock.")
+
+def filtrar_por_precio():
+    try:
+        minimo = float(input("Ingrese el precio mínimo: "))
+        maximo = float(input("Ingrese el precio máximo: "))
+        print("\nLibros en ese rango de precio:")
+        encontrados = False
+        for libro in libros:
+            if minimo <= libro["precio"] <= maximo:
+                print(f"- {libro['título']} de {libro['autor']} (${libro['precio']})")
+                encontrados = True
+        if not encontrados:
+            print("No se encontraron libros en ese rango de precio.")
+    except ValueError:
+        print("Debes ingresar números válidos.")
+
+descuentos = {
+    "Gabriel García Márquez": 0.10,
+    "Julio Cortázar": 0.05
+}
+
+total_pagado = 0
+total_ahorro = 0
+total_libros_comprados = 0
+
+def comprar_libros(titulo, cantidad):
+    global total_pagado, total_ahorro, total_libros_comprados
+    encontrado = False
+    titulo = titulo.strip().lower()
+
+    for libro in libros:
+        if titulo in libro["título"].strip().lower():
+            encontrado = True
+            if libro["stock"] <= 0:
+                print("Lo sentimos, este libro no tiene stock disponible.")
+                return
+            if cantidad <= 0:
+                print("Debes ingresar una cantidad válida mayor que 0.")
+                return
+            if cantidad > libro["stock"]:
+                print(f"Error: Solo quedan {libro['stock']} unidad(es) en stock.")
+                return
+
+            subtotal = libro["precio"] * cantidad
+            descuento = 0
+            if libro["autor"] in descuentos:
+                descuento = subtotal * descuentos[libro["autor"]]
+                subtotal -= descuento
+
+            libro["stock"] -= cantidad
+            total_pagado += subtotal
+            total_ahorro += descuento
+            total_libros_comprados += cantidad
+
+            print(f"\nCompra exitosa: {cantidad} libro(s) de '{libro['título']}'")
+            print(f"Total a pagar: ${subtotal:.0f}")
+            print(f"Ahorro aplicado: ${descuento:.0f}")
+            return
+
+    if not encontrado:
+        print("Error: Libro no encontrado. Revisa el título o escribe parte del nombre.")
+        print("Estos son los libros disponibles:")
+        for libro in libros:
+            print(f"- {libro['título']}")
+
+while True:
+    print("\nMENÚ:")
+    print("1. Mostrar libros disponibles")
+    print("2. Buscar libros por rango de precio")
+    print("3. Comprar un libro")
+    print("4. Salir y ver factura final")
+
+    opcion = input("Seleccione una opción (1-4): ")
+
+    if opcion == "1":
+        mostrar_libros_disponibles()
+
+    elif opcion == "2":
+        filtrar_por_precio()
+
+    elif opcion == "3":
+        mostrar_libros_disponibles()
+        titulo = input("Ingrese el título o parte del título del libro: ")
+        try:
+            cantidad = int(input("Ingrese la cantidad a comprar: "))
+            comprar_libros(titulo, cantidad)
+        except ValueError:
+            print("Debes ingresar un número válido para la cantidad.")
+
+    elif opcion == "4":
+        print("\nFACTURA FINAL")
+        print(f"Total de libros comprados: {total_libros_comprados}")
+        print(f"Monto total pagado: ${total_pagado:.0f}")
+        print(f"Ahorro total por descuentos: ${total_ahorro:.0f}")
+        print("Gracias por comprar en Libros & Bytes")
+        break
+
+    else:
+        print("Opción no válida. Intenta de nuevo.")

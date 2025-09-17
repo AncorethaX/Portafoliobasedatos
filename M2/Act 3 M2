@@ -1,0 +1,34 @@
+estudiantes = []
+
+while True:
+    nombre = input("Ingresa el nombre del estudiante: ")
+
+    matematicas = float(input("Ingresa la nota de Matemáticas: "))
+    ciencias = float(input("Ingresa la nota de Ciencias: "))
+    ingles = float(input("Ingresa la nota de Inglés: "))
+
+    if matematicas >= 60 and ciencias >= 60 and ingles >= 60:
+        print(f"{nombre} ha aprobado todas las materias.")
+    else:
+        print(f"{nombre} necesita mejorar en alguna asignatura.")
+
+    promedio = (matematicas + ciencias + ingles) / 3
+
+    if promedio >= 90:
+        comentario = "Excelente"
+    elif promedio >= 75:
+        comentario = "Bueno"
+    else:
+        comentario = "Necesita mejorar"
+
+    comentario += " ¡Puntuación perfecta!" if promedio == 100 else ""
+
+    estudiantes.append((nombre, comentario))
+
+    continuar = input("¿Deseas ingresar otro estudiante? (s/n): ").lower()
+    if continuar != 's':
+        break
+
+print("\nResultados Finales:")
+for estudiante in estudiantes:
+    print(f"{estudiante[0]}: {estudiante[1]}")
