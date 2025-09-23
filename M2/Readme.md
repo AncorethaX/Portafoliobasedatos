@@ -9,4 +9,6 @@ Este ejercicio permitió afianzar los principios básicos de la programación, r
 👉🏻[Regresar](https://github.com/AncorethaX/Portafolio-Bootcamp-Ciencia-de-Datos/tree/main)
 
 ---
-© 2025 - Creado por ***Ximena Jaque Neira***
+<sub>© 2025 - Creado por *Ximena Jaque Neira*</sub>
+
+
