@@ -1,4 +1,4 @@
-Módulo 2 – Fundamentos de Programación en Python
+📚 Módulo 2 – Fundamentos de Programación en Python
 
 En este proyecto se trabajó en el desarrollo de una solución para la cadena de librerías Libros & Bytes, enfocándonos en la creación de un sistema básico de gestión de inventario y simulación de compras en línea.
 
