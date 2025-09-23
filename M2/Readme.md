@@ -7,3 +7,6 @@ El enfoque principal estuvo en aplicar los conceptos fundamentales de programaci
 Este ejercicio permitió afianzar los principios básicos de la programación, resolviendo un caso práctico con lógica de negocio real.
 
 👉🏻[Regresar](https://github.com/AncorethaX/Portafolio-Bootcamp-Ciencia-de-Datos/tree/main)
+
+---
+© 2025 - Creado por ***Ximena Jaque Neira***
