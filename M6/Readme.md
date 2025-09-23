@@ -1,3 +1,3 @@
-📚Módulo 6 – Aprendizaje Supervisado
+# 🤖 Módulo 6 – Aprendizaje Supervisado
 
 Aquí comenzamos a trabajar con algoritmos de machine learning supervisado. El desafío fue analizar cómo variables climáticas influían en la producción agrícola de diversos países. Se utilizaron técnicas de regresión y clasificación, además de ajustes y validación de modelos para mejorar la precisión de las predicciones.
