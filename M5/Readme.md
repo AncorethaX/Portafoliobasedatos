@@ -1,3 +1,5 @@
 # 📈 Módulo 5 – Inferencia Estadística
 
 El objetivo de este módulo fue poner en práctica herramientas estadísticas para evaluar el impacto de un programa de tutoría en el rendimiento académico. Se aplicaron conceptos clave como pruebas de hipótesis, intervalos de confianza y diseño experimental, con el fin de tomar decisiones basadas en evidencia cuantitativa.
+
+👉🏻 https://github.com/AncorethaX/Portafoliobasedatos/tree/main/M4
