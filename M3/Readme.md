@@ -5,4 +5,4 @@ Durante este módulo trabajé con técnicas de procesamiento y limpieza de datos
 👉🏻[Regresar](https://github.com/AncorethaX/Portafolio-Bootcamp-Ciencia-de-Datos/tree/main)
 
 ---
-© 2025 - Creado por ***Ximena Jaque Neira***
+<sub>© 2025 - Creado por *Ximena Jaque Neira*</sub>
